@@ -77,6 +77,7 @@ dbt test
 │   └── marts/            # Logique métier & métriques
 ├── setup/                # Scripts de configuration Snowflake
 └── README.md             # Ce fichier
+```
 
 ## Dashboard
 
