@@ -1,0 +1,11 @@
+# dbt artifacts
+target/
+dbt_packages/
+logs/
+
+# Credentials
+profiles.yml
+.env
+
+# OS files
+.DS_Store

@@ -1,0 +1,26 @@
+name: 'skello_intercom'
+version: '1.0.0'
+config-version: 2
+
+profile: 'skello_intercom'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  skello_intercom:
+    +materialized: view
+    staging:
+      +materialized: view
+      +schema: stg
+    marts:
+      +materialized: table
+      +schema: mart

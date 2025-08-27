@@ -1,0 +1,13 @@
+skello_intercom:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: SNOWFLAKE_ACCOUNT
+      user: USERNAME
+      password: PASSWORD
+      role: DBT_ROLE
+      database: SKELLO_INTERCOM
+      warehouse: DBT_WH
+      schema: STG
+      threads: 4

@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: fct_conversations
+    columns:
+      - name: conversation_id
+        tests: [not_null, unique]
+  - name: rpt_weekly_support_summary
+    columns:
+      - name: week_start
+        tests: [not_null]

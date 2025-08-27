@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: stg_conversations
+    columns:
+      - name: conversation_id
+        tests: [not_null, unique]
+  - name: stg_conversation_parts
+    columns:
+      - name: conversation_part_id
+        tests: [not_null, unique]
+      - name: conversation_id
+        tests:
+          - relationships:
+              to: ref('stg_conversations')
+              field: conversation_id

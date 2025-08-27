@@ -1,0 +1,50 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw Intercom data loaded into Snowflake"
+    database: skello_intercom
+    schema: raw
+    freshness:
+      warn_after: {count: 2, period: day}
+      error_after: {count: 5, period: day}
+    tables:
+      - name: conversations_raw
+        description: "Raw conversations data from Intercom"
+        loaded_at_field: updated_at
+        columns:
+          - name: id
+            description: "Unique conversation identifier"
+            tests:
+              - not_null
+              - unique
+          - name: created_at
+            description: "When conversation was created"
+            tests:
+              - not_null
+          - name: assignee
+            description: "JSON containing assignee information"
+          - name: conversation_rating
+            description: "JSON containing CSAT rating and feedback"
+
+      - name: conversation_parts_raw
+        description: "Raw conversation parts (messages/actions) from Intercom"
+        loaded_at_field: updated_at
+        columns:
+          - name: id
+            description: "Unique conversation part identifier"
+            tests:
+              - not_null
+              - unique
+          - name: conversation_id
+            description: "Related conversation ID"
+            tests:
+              - not_null
+          - name: created_at
+            description: "When part was created"
+            tests:
+              - not_null
+          - name: author
+            description: "JSON containing author information"
+          - name: type
+            description: "Type of conversation part"
