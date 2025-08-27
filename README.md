@@ -71,6 +71,7 @@ dbt test
 ```
 
 ## Structure du projet
+```text
 ├── models/
 │   ├── staging/          # Transformations de données brutes
 │   └── marts/            # Logique métier & métriques
@@ -83,9 +84,8 @@ dbt test
 
 Le projet repose sur deux fichiers fournis pour le case study :
 
-CONVERSATIONS.csv
-
-CONVERSATION_PARTS.csv
+- CONVERSATIONS.csv
+- CONVERSATION_PARTS.csv
 
 Ces fichiers sont inclus dans ce dépôt pour faciliter la reproduction du projet.
 Dans ce projet, j’ai importé ces CSV dans Snowflake, puis construit un pipeline dbt pour les transformer.
