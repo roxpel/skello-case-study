@@ -1,11 +1,15 @@
 # dbt artifacts
 target/
 dbt_packages/
+dbt_modules/
 logs/
 
 # Credentials
 profiles.yml
 .env
+.user.yml
 
-# OS files
+# OS files / editor junk
 .DS_Store
+.Rhistory
+*.save

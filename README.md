@@ -5,27 +5,24 @@ Objectif : mettre en place un pipeline dbt sur les données Intercom, proposer u
 
 ## Consignes d’installation
 
-Copiez profiles.yml.example vers ~/.dbt/profiles.yml
-
-Remplacez les valeurs par défaut par vos identifiants Snowflake
-
-Vérifiez la connexion avec :
-
+1. Copiez profiles.yml.example vers ~/.dbt/profiles.yml
+2. Remplacez les valeurs par défaut par vos identifiants Snowflake
+3. Vérifiez la connexion avec :
+```bash
 dbt debug
+```
 
 ## Construisez les modèles avec :
-
+```bash
 dbt run
+```
 
 ## Prérequis
 
-Compte Snowflake avec accès ACCOUNTADMIN (pour le setup initial)
-
-dbt installé en local
-
-Données Intercom brutes chargées dans le schéma SKELLO_INTERCOM.RAW
-
-Tableau Desktop / Server pour la visualisation (connexion directe à Snowflake ou via CSV export)
+1. Compte Snowflake avec accès ACCOUNTADMIN (pour le setup initial)
+2. dbt installé en local
+3. Données Intercom brutes chargées dans le schéma SKELLO_INTERCOM.RAW
+4. Tableau Desktop / Server pour la visualisation (connexion directe à Snowflake ou via CSV export)
 
 ## Initialisation Snowflake
 
@@ -53,17 +50,25 @@ skello_intercom:
 
 ## Exécution du pipeline
 
-# Installer les dépendances
+1. Installer les dépendances
+```bash
 dbt deps
+```
 
-# Lancer les modèles de staging
+2. Lancer les modèles de staging
+```bash
 dbt run --select staging
+```
 
-# Lancer les modèles de marts (inclut le nettoyage pour Tableau)
+3. Lancer les modèles de marts (inclut le nettoyage pour Tableau)
+```bash
 dbt run --select marts
+```
 
-# Vérifier avec les tests
+4. Vérifier avec les tests
+```bash
 dbt test
+```
 
 ## Structure du projet
 ├── models/
