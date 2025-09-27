@@ -1,6 +1,5 @@
 # Skello Intercom Data Pipeline
 
-Projet réalisé dans le cadre du case study Data Analyst de Skello.
 Objectif : mettre en place un pipeline dbt sur les données Intercom, proposer un modèle de données fiable et construire un template de dashboard pour l’équipe Support.
 
 ## Consignes d’installation
